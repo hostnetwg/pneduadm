@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Product;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,8 +17,34 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Waldemar',
+            'email' => 'waldemar.grabowski@hostnet.pl',
+            'password' => 'noYkeT#70',
         ]);
+        
+        //Product::factory(10)->create(); // Tworzy 10 losowych produktów
+        Product::insert([
+            [
+                'name' => 'KURS: AI w pracy NAUCZYCIELA',
+                'price' => 49.99,
+                'description' => 'Kurs dotyczący wykorzystania sztucznej inteligencji w pracy nauczyciela',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'KURS: Canva w pracy NAUCZYCIELA',
+                'price' => 99.50,
+                'description' => 'Kurs krok po kroku dotyczący Canvy',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'SUBSKRYPCJA: TIK w pracy NAUCZYCIELA',
+                'price' => 199.00,
+                'description' => 'Dostęp do nagrań historycznych webinarów',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ]);        
     }
 }
