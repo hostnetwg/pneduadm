@@ -25,6 +25,7 @@ Route::post('/products/store', [ProductController::class, 'store'])->name('produ
 Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
 
 
+
 // Wyświetla stronę profilu, dostępna tylko dla uwierzytelnionych użytkowników
 Route::view('profile', 'profile')
     ->middleware(['auth']) // Middleware, aby upewnić się, że użytkownik jest uwierzytelniony
